@@ -128,7 +128,7 @@ island_coordinates <- data.frame(
   island = c("Biscoe", "Dream", "Torgersen"),
   latitude = c(-65.433, -64.733, -64.766),
   longitude = c(-65.5, -64.344, -64.083)
-)
+)  
 
 ggplot(island_coordinates, aes(latitude, longitude)) +
   geom_point() +
