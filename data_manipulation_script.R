@@ -117,7 +117,7 @@ penguins_site_by_species <- penguin_totals |>
     names_from = species,
     values_from = total_penguins,
     values_fill =  0
-  )
+  )  
 
 penguins_back_to_totals <- penguins_site_by_species |>
   tidyr::pivot_longer(-island, names_to = "Species", values_to = "Abundance")
