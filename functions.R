@@ -20,6 +20,21 @@ torgersen_data <- get_island_data(island_name = "Torgersen")
 torgersen_predictions <- get_predicted_body_masses(torgersen_data)
 
 
+# Using iteration
+
+### For loop to get the data
+
+islands_data <- list()
+
+for(an_island in c("Biscoe", "Dream", "Torgersen")) {
+  islands_data[[an_island]] <- get_island_data(island_name = an_island)
+}
+
+### purrr::map to get the predictions
+
+islands_predictions <- purrr::map(islands_data, get_predicted_body_masses)
+
+island_predictions_df <- dplyr::bind_rows(islands_predictions)
 
 
 
